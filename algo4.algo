@@ -1,0 +1,23 @@
+PROCEDURE swap(var x,y : INTEGER)
+VAR
+    z:INTEGER
+BEGIN
+    z:=x;
+    x:=y;
+    y:=z;
+END
+ALGORITHM insertion
+VAR
+    tab  : ARRAY_OF INTEGER[1000];
+    i,j, n :INTEGER
+BEGIN
+READ(tab)
+n:=tab.length-1
+    FOR i FROM 0 TO n STEP 1  DO
+        j:=i;
+        WHILE (j>0 and tab[j-1]>tab[j] ) DO
+            swap (tab[j] ,tab[j-1])
+            j--;
+        END_WHILE
+    END_FOR
+END
